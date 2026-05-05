@@ -56,15 +56,15 @@ public class Reservation {
     }
 
     public double getPrice() {
-        if (roomType.equals("king") && isWeekend) {
+        if (roomType.equalsIgnoreCase("king") && isWeekend) {
             return kingRoom * 1.1;
 
-        } else if (roomType.equals("double") && isWeekend) {
+        } else if (roomType.equalsIgnoreCase("double") && isWeekend) {
             return doubleRoom * 1.1;
 
-        } else if (roomType.equals("king")) {
+        } else if (roomType.equalsIgnoreCase("king")) {
             return kingRoom;
-        } else if (roomType.equals("double")) {
+        } else if (roomType.equalsIgnoreCase("double")) {
             return doubleRoom;
         }
         //this is a computer stupid moment b/c all cases are covered,
