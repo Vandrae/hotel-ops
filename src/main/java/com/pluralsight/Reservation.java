@@ -1,17 +1,15 @@
 package com.pluralsight;
 
 public class Reservation {
-private String roomType ;
-private  Double kingRoom = 139.00;
-private  Double doubleRoom = 124.00;
-private boolean isWeekend;
-private  int numberOfNights;
-private double reservationTotal;
+    private String roomType;
+    private final Double kingRoom = 139.00;
+    private final Double doubleRoom = 124.00;
+    private boolean isWeekend;
+    private int numberOfNights;
+    private double reservationTotal;
 
     public Reservation(String roomType, Double kingRoom, Double doubleRoom, boolean isWeekend, int numberOfNights, double reservationTotal) {
         this.roomType = roomType;
-        this.kingRoom = kingRoom;
-        this.doubleRoom = doubleRoom;
         this.isWeekend = isWeekend;
         this.numberOfNights = numberOfNights;
         this.reservationTotal = reservationTotal;
@@ -57,22 +55,27 @@ private double reservationTotal;
         return doubleRoom;
     }
 
-    public double weekendPrice(){
-        if (roomType.equals("king") && isWeekend == true){
+    public double getPrice() {
+        if (roomType.equals("king") && isWeekend) {
             return kingRoom * 1.1;
 
-        } else if (roomType.equals("double") && isWeekend == true){
+        } else if (roomType.equals("double") && isWeekend) {
             return doubleRoom * 1.1;
 
+        } else if (roomType.equals("king")) {
+            return kingRoom;
+        } else if (roomType.equals("double")) {
+            return doubleRoom;
+        }
+        //this is a computer stupid moment b/c all cases are covered,
+        // but it wants well if none of these happen then what?
+        return 0;
     }
 
-    public boolean
+    public double reservationTotal () {
+        return numberOfNights * getPrice();
 
-    //if over weekend incrase price by 10%
-    // calc total
-    //
-    //
-    //
+    }
 
 
 
