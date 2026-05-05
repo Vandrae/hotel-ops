@@ -19,24 +19,54 @@ public class Room {
         return numberOfBeds;
     }
 
+    public void setNumberOfBeds(int numberOfBeds) {
+        this.numberOfBeds = numberOfBeds;
+    }
+
     public Double getPrice() {
         return Price;
+    }
+
+    public void setPrice(Double price) {
+        Price = price;
     }
 
     public Boolean getOccupied() {
         return isOccupied;
     }
 
+    public void setOccupied(Boolean occupied) {
+        isOccupied = occupied;
+    }
+
     public Boolean getDirty() {
         return isDirty;
+    }
+
+    public void setDirty(Boolean dirty) {
+        isDirty = dirty;
     }
 
     public Boolean getAvailable() {
         return isAvailable;
     }
 
+    public void setAvailable(Boolean available) {
+        isAvailable = available;
+    }
+
+    private boolean isDirty() {
+    return isDirty;
+    }
 
 
+    private boolean isOccupied() {
+        return  isOccupied;
+    }
+
+    public boolean isAvailable(){
+        return !this.isOccupied() && !this.isDirty();
+    }
 
 
 
