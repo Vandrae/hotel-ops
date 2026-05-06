@@ -80,12 +80,24 @@ public class Employee {
         return getRegularHours() * payRate + getOvertimeHours() * (payRate * 1.5);
     }
 
-    public void punchTimeCard(int time){
-        if (this.punchInTime == 0){
-            this.punchInTime = time;
-        }else {
-            hoursWorked = time - punchInTime;
-        }
+    public void punchIn(int time){
+       this.punchInTime = time;
+    }
+
+    public void punchOut(int time){
+        hoursWorked = time - punchInTime;
+    }
+
+    public void punchIn(){
+        LocalTime timeNow  = LocalTime.now();
+        int hour = timeNow.getHour();
+        punchIn(hour);
+    }
+
+    public void punchOut(){
+        LocalTime timeNow  = LocalTime.now();
+        int hour = timeNow.getHour();
+        punchOut(hour);
     }
 
 
