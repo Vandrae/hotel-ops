@@ -61,13 +61,15 @@ public class Room {
         return !this.isOccupied() && !this.isDirty();
     }
 
-    public void checkIn(){
+    public short checkIn(){
         if (isAvailable()){
             //marked occupied
             this.isOccupied = true;
             //marked as dirty
             this.isDirty = true;
         }
+
+        return 0;
     }
 
     public void checkOut(){
