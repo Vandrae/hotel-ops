@@ -75,12 +75,21 @@ public class Room {
     public void checkOut(){
         //cleaned by housekeeper
         cleanRoom();
+
         this.isOccupied = false;
     }
 
     public void cleanRoom(){
         this.isDirty = false;
     }
+
+//    public void cleanRoom(boolean isDirty){
+//        if(isDirty){
+//            //puts in ticket to clean room and room is cleaned
+//           isDirty=false;
+//        }
+    }
+
 
 
 

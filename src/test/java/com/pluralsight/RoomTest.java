@@ -8,6 +8,9 @@ class RoomTest {
 
     @Test
     public void checkIn_should_makeRoomDirty(){
+//    Name_condition_expectedResult
+//    checkIn_whenRoomIsAvailable_succeeds()
+//    checkIn_withoutReservation_fails{)
         //arrange
         Room room = new Room(1,10.00,false,false);
 
